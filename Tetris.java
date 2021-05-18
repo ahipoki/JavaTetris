@@ -15,7 +15,6 @@ public class Board implements ActionListener{
         panel.add(score);
         frame.setSize(500, 750);
         frame.setLayout(new BorderLayout());
-        //frame.add(pause, BorderLayout.EAST);
         frame.add(panel, BorderLayout.EAST);
         pause.addActionListener(this);
         
