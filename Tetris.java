@@ -2,6 +2,8 @@ import javax.swing.*;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 public class Tetris implements ActionListener{
     JFrame frame = new JFrame("Tetris");
@@ -17,6 +19,25 @@ public class Tetris implements ActionListener{
         frame.setLayout(new BorderLayout());
         frame.add(panel, BorderLayout.EAST);
         pause.addActionListener(this);
+        
+        frame.addKeyListener(new KeyListener(){
+            public void keyPressed(KeyEvent e){
+                switch (e.getKeyCode()){
+                case KeyEvent.VK_UP:
+                    dropDown();
+                case KeyEvent.VK_DOWN:
+                    //speed up
+                case KeyEvent.VK_LEFT:
+                    //move left
+                case KeyEvent.VK_RIGHT:
+                    //move right
+                case KeyEvent.VK_X:
+                    //rotate right
+                case KeyEvent.VK_Z:
+                    //rotate left
+                }
+            }
+        });
         
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
@@ -69,24 +90,5 @@ public class Tetris implements ActionListener{
     
     public static void main(String[] args) {
         new Tetris();
-        
-        frame.addKeyListener(new KeyListener(){
-            public void keyPressed(KeyEvent e){
-                switch (e.getKeyCode()){
-                case KeyEvent.VK_UP:
-                    dropDown();
-                case KeyEvent.VK_DOWN:
-                    //speed up
-                case KeyEvent.VK_LEFT:
-                    //move left
-                case KeyEvent.VK_RIGHT:
-                    //move right
-                case KeyEvent.VK_X:
-                    //rotate right
-                case KeyEvent.VK_Z:
-                    //rotate left
-                }
-            }
-        });
     }
 }
