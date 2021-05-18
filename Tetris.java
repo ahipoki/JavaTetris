@@ -25,8 +25,12 @@ public class Board implements ActionListener{
     @Override
     public void actionPerformed (ActionEvent e){
         if (e.getSource().equals(pause)){
-            
+            //pauseGame();
         }
+    }
+    
+    public void pauseGame(){
+        
     }
     
     public static void main(String[] args) {
