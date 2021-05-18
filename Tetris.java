@@ -35,6 +35,8 @@ public class Tetris implements ActionListener{
                     //rotate right
                 case KeyEvent.VK_Z:
                     //rotate left
+                case KeyEvent.VK_SHIFT:
+                    holdBlock();
                 }
             }
         });
@@ -51,19 +53,28 @@ public class Tetris implements ActionListener{
     }
     
     public void pauseGame(){
-        
+        //stop block auto-moving, disable ability to move, rotate, drop, or hold blocks
+        //only enable once resumed
     }
     
     public void rotate(){
-        
+        //If rotate left, rotate to next position left of current one
+        //If rotate right, rotate block to next position right of current one
     }
     
     public void move(){
-        
+        //If left key is pressed, move block one space left on board
+        //If right key is pressed, move block one space right on board
     }
     
     public void dropDown(){
-        
+        //Drop current block in play to bottom of screen
+    }
+    
+    public void holdBlock(){
+        //check if a block is already held
+        //if held, switch
+        //if empty, remove current block from play and keep track of it until next switch
     }
     
     public void clearRows(){
