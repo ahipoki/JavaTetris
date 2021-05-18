@@ -3,11 +3,11 @@ import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Board implements ActionListener{
+public class Tetris implements ActionListener{
     JFrame frame = new JFrame("Tetris");
     JButton pause = new JButton("Pause");
     
-    public Board(){
+    public Tetris(){
         frame.setSize(500, 750);
         frame.setLayout(new BorderLayout());
         frame.add(pause, BorderLayout.EAST);
@@ -25,6 +25,6 @@ public class Board implements ActionListener{
     }
     
     public static void main(String[] args) {
-        new Board();
+        new Tetris();
     }
 }
