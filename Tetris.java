@@ -6,13 +6,13 @@ import java.awt.event.ActionListener;
 public class Board implements ActionListener{
     JFrame frame = new JFrame("Tetris");
     JButton pause = new JButton("Pause");
-    JLabel score = new JLabel("Score: ");
+    JLabel scoreLabel = new JLabel("Score: 0");
     
     JPanel panel = new JPanel();
     
     public Board(){
         panel.add(pause);
-        panel.add(score);
+        panel.add(scoreLabel);
         frame.setSize(500, 750);
         frame.setLayout(new BorderLayout());
         frame.add(panel, BorderLayout.EAST);
@@ -31,6 +31,28 @@ public class Board implements ActionListener{
     
     public void pauseGame(){
         
+    }
+    
+    public void clearRows(){
+        int linesCleared = 0;
+        int score = 0;
+        
+        if (linesCleared == 1){//1 Line cleared
+            score += 40;
+            scoreLabel.setText("Score: " + score);
+        }
+        else if (linesCleared == 2){//2 Lines cleared
+            score += 80;
+            scoreLabel.setText("Score: " + score);
+        }
+        else if (linesCleared == 3){//3 Lines cleared
+            score += 120;
+            scoreLabel.setText("Score: " + score);
+        }
+        else{//4 Lines cleared
+            score += 160;
+            scoreLabel.setText("Score: " + score);
+        }
     }
     
     public static void main(String[] args) {
