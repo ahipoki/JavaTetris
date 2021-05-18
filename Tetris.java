@@ -3,14 +3,14 @@ import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Board implements ActionListener{
+public class Tetris implements ActionListener{
     JFrame frame = new JFrame("Tetris");
     JButton pause = new JButton("Pause");
     JLabel scoreLabel = new JLabel("Score: 0");
     
     JPanel panel = new JPanel();
     
-    public Board(){
+    public Tetris(){
         panel.add(pause);
         panel.add(scoreLabel);
         frame.setSize(500, 750);
@@ -30,6 +30,18 @@ public class Board implements ActionListener{
     }
     
     public void pauseGame(){
+        
+    }
+    
+    public void rotate(){
+        
+    }
+    
+    public void move(){
+        
+    }
+    
+    public void dropDown(){
         
     }
     
@@ -56,6 +68,25 @@ public class Board implements ActionListener{
     }
     
     public static void main(String[] args) {
-        new Board();
+        new Tetris();
+        
+        frame.addKeyListener(new KeyListener(){
+            public void keyPressed(KeyEvent e){
+                switch (e.getKeyCode()){
+                case KeyEvent.VK_UP:
+                    dropDown();
+                case KeyEvent.VK_DOWN:
+                    //speed up
+                case KeyEvent.VK_LEFT:
+                    //move left
+                case KeyEvent.VK_RIGHT:
+                    //move right
+                case KeyEvent.VK_X:
+                    //rotate right
+                case KeyEvent.VK_Z:
+                    //rotate left
+                }
+            }
+        });
     }
 }
