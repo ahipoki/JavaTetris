@@ -73,7 +73,7 @@ public class Board extends JPanel{
     
     private void doDrawing(Graphics g){
         double size = getSize().getHeight() * getSize().getWidth();
-        int boardTop = (int) size.getHeight() - BOARD_HEIGHT * squareHeight();
+        int boardTop = (int) size.getHeight() - BOARD_HEIGHT * squareHeight();//The only issue seems to be here where it's giving me a "double cannot be dereferenced error". It should be because of the size.getHeight() part but I don't know what variable type I need to change it to.
         for (int x = 0; x < BOARD_HEIGHT; x++){
             for (int y = 0; y < BOARD_WIDTH; y++){
                 Tetromino shape = shapeAt(y, BOARD_HEIGHT - x - 1);
