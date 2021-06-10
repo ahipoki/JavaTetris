@@ -31,8 +31,8 @@ public class Tetris{
     }
     
     public static void main(String[] args) {
-        EventQueue.invokeLater(() ->{
-            new Tetris();
-        });
+        //EventQueue.invokeLater(() ->{
+        new Tetris();
+        //});
     }
 }
